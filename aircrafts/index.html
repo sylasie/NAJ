@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Samoloty</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 heading">
+				<div class="headlogo"></div>
+			</div>
+		</div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 main">
+			<div class="col-sm-6">
+			  <h2 class="sub-header" id="aircrafts-section"><span class="fa fa-fighter-jet"></span> Samoloty</h2>
+			  <form role="form" class="form-inline" id="newAircraftForm">
+				<div class="form-group has-feedback">
+				  <input name="code" type="text" class="form-control"
+						 placeholder="Kod samolotu" data-minlength="3" required>
+				  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				  <div class="help-block with-errors"></div>
+				</div>
+				<button type="submit" class="btn btn-primary btn-top">
+				  Dodaj
+				  <span class="fa fa-plus"></span>
+				</button>
+			  </form>
+			  <div class="table-responsive">
+				<table class="table">
+				  <thead>
+					<tr>
+					  <th>#</th>
+					  <th>Kod</th>
+					  <th>Naprawa</th>
+					  <th>Stan</th>
+					  <th>Akcje</th>
+					</tr>
+				  </thead>
+				  <tbody id="aircrafts">
+				  </tbody>
+				</table>
+			  </div>
+			</div>
+			<div class="col-sm-6">
+			  <h2 class="sub-header" id="services-section"><span class="fa fa-wrench"></span> Naprawy</h2>
+				<div class="table-responsive">
+				<table class="table">
+				  <thead>
+					<tr>
+					  <th>#</th>
+					  <th>Nazwa</th>
+					  <th>Czas do zakończenia</th>
+					  <th>Samolot</th>
+					</tr>
+				  </thead>
+				  <tbody id="services">
+				  </tbody>
+				</table>
+			  </div>
+			</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="addServiceModal" tabindex="-1" role="dialog" aria-labelledby="addServiceModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="addServiceModalLabel">Dodaj naprawę do samolotu</h4>
+          </div>
+          <form role="form">
+            <div class="modal-body">
+              <input name="code" type="hidden" id="aircraftCode">
+              <div class="form-group has-feedback">
+                <label for="name" class="control-label">Nazwa:</label>
+                <input name="name" type="text" class="form-control" id="name" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"></div>
+              </div>
+              <div class="form-group has-feedback">
+                <label for="timeToExecute" class="control-label">Czas do zakończenia:</label>
+                <input name="timeToExecute" type="number" min="0" step="1" class="form-control" id="timeToExecute" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+              <button type="submit" class="btn btn-primary">Dodaj naprawę</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery.serializeJSON.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="js/bootstrap-validator.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
