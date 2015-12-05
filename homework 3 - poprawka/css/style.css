@@ -1,0 +1,24 @@
+.title h1{
+    text-align: center;
+}
+
+.rower {
+    height: 70px;
+    vertical-align: middle;
+}
+#services{
+    display: none;
+}
+
+.foot {
+    float: right;
+    margin-right: 20px;
+}
+
+h2 {
+    display: inline-block;
+}
+
+#newAircraftForm {
+    vertical-align: middle;
+}

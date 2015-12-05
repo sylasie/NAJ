@@ -1,4 +1,4 @@
-<html>
+<html ng-app='app'>
 	<head>
 		<meta charset="utf-8"/>
 		<title>Exam</title>
@@ -6,22 +6,28 @@
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 	</head>
 
-	<body>
+	<body ng-controller='MainCtrl'>
 		<div class="form">
             <div>
                 <label for="todo">Todos</label>
-                <input type="text" id="todo">
+                <input ng-model='todo'>
             </div>
+            <button ng-click="addTodo()"></button>
 		</div>
         <div class="todos-list">
             <label for="todos">To do List:</label>
             <ul id="todos"></ul>
         </div>
 		<div>
-			<button id="removeall">Usun wszystko
+            <button id="removeall">Usun wszystko</button>
 		</div>
         
 	</body>
+        <script type="text/javascript" src="lib/angular.min.js"></script>
+        <script type="text/javascript" src="js/app2.js"></script>
+        <script type="text/javascript" src="js/ctrl.js"></script>
+<!--
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+-->
 </html>

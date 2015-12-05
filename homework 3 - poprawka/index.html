@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Samoloty</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand airplane active" href="#airplanes">Lista samolotów</a>
+            <a class="navbar-brand service" href="#services">Naprawy</a>
+        </div>
+    </div>
+</nav>
+
+<div id="airplanes">
+    <div class="jumbotron">
+        <div class="container title">
+            <h1>Lista samolotów</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Dodaj samolot</h2>
+                <form role="form" class="form-inline" id="newAircraftForm">
+                        <span class="fa fa-fighter-jet fa-4x"></span>
+                        <div class="form-group has-feedback">
+                            <input name="airName" type="text" class="form-control"
+                                   placeholder="Kod samolotu" data-minlength="3" required>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-top" id="addCode">
+                            Dodaj
+                            <span class="fa fa-plus"></span>
+                        </button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Kod</th>
+                            <th>Stan</th>
+                            <th>Akcje</th>
+                        </tr>
+                        </thead>
+                        <tbody id="aircrafts">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+    </div>
+</div>
+<div id="services">
+    <div class="jumbotron">
+        <div class="container title">
+            <h1>Lista napraw</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-6">
+                <span class="fa fa-wrench fa-4x"></span>
+                <h2>Dodaj naprawę</h2>
+                <form role="form" class="form-inline" id="newServiceForm">
+                    <div class="form-group has-feedback">
+                        <label>Nazwa naprawy: </label>
+                        <input name="serviceName" type="text" class="form-control"
+                               placeholder="Nazwa naprawy" data-minlength="3" required>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Wybierz samolot: </label>
+                        <select id="namesAir" class="form-control"></select>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label>Czas naprawy: </label>
+                        <input name="timeService" type="number" min="0" step="1" class="form-control"
+                               placeholder="Czas do zakończenia" data-minlength="3" required>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-top" id="addService">
+                        Dodaj
+                        <span class="fa fa-plus"></span>
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="table-responsive">
+                    <table class="table" id="servicesTable">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nazwa</th>
+                            <th>Kod</th>
+                            <th>Czas do zakończenia</th>
+                        </tr>
+                        </thead>
+                        <tbody id="serv">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+    </div>
+</div>
+<footer>
+    <p class="foot">&copy; 2015 Magdalena Nowak.</p>
+</footer>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/czysty.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.countdown360.js"></script>
+</body>
+</html>
