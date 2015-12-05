@@ -1,0 +1,10 @@
+{
+"boss"          : false,  // Tolerate assignments inside if, for & while. Usually conditions & loops are for comparison, not assignments.
+"curly"         : true,   // Require {} for every new block or scope.
+"eqeqeq"        : false,   // Require triple equals i.e. `===`.
+"eqnull"        : false,  // Tolerate use of `== null`.
+"evil"          : false,  // Tolerate use of `eval`.
+"undef"         : true,   // Require all non-global variables be declared before they are used.
+"newcap"        : true,   // Require capitalization of all constructor functions e.g. `new F()`.
+"node"          : true,
+}
