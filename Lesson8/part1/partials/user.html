@@ -1,0 +1,10 @@
+<h1>User</h1>
+
+<p>{{user.firstName}} {{user.lastName}}</p>
+<p>{{user.description}}</p>
+
+<a ui-sref="user.inventory({userId: userId})">Show inventory</a>
+<a ui-sref="user.favorites({userId: userId})">Show favorites</a>
+
+<!--Sub view should be rendered here -->
+<div ui-view></div>
